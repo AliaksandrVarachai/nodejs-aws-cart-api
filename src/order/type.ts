@@ -30,9 +30,14 @@ export type CreateOrderDto = {
 };
 
 export type PutCartPayload = {
-  product: { description: string; id: string; title: string; price: number };
+  productId: string;
   count: number;
 };
+
+export type DeleteCartItemPayload = {
+  productId: string;
+}
+
 export type CreateOrderPayload = {
   userId: string;
   cartId: string;
