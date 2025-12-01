@@ -5,5 +5,6 @@ import { AppRequest } from '../models';
  * @returns {string}
  */
 export function getUserIdFromRequest(request: AppRequest): string {
-  return request.user && request.user.id;
+  // As users are outside the DB, username is used as userID for simplicity
+  return request.user && request.user.name;
 }

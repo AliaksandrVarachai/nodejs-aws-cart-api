@@ -24,6 +24,16 @@ export const dataSourceConfig: DataSourceOptions = {
   username: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
   entities: ['dist/**/*.entity.{js,ts}'],
+  ssl: {
+    rejectUnauthorized: false,
+  },
+  extra: {
+    connectionTimeoutMillis: 10000,
+    idleTimeoutMillis: 30000,
+    ssl: {
+      rejectUnauthorized: false,
+    },
+  }
 }
 
 console.log(`Started with NODE_ENV=${process.env.NODE_ENV} DB_NAME=${process.env.DB_NAME}`);
